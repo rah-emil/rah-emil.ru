@@ -1,0 +1,68 @@
+@use "vars";
+@use "functions";
+
+* {
+    box-sizing: vars.$box-sizing-base;
+
+    &:before,
+    &:after {
+        box-sizing: vars.$box-sizing-base;
+    }
+}
+
+html {
+    @if vars.$enable-smooth-scroll {
+        scroll-behavior: smooth;
+    }
+
+    font-size: vars.$font-size-base;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: vars.$font-family-base;
+    line-height: vars.$line-height-base;
+    color: functions.color("white");
+    background-color: functions.color("dark");
+    overflow-x: hidden;
+    height: auto;
+    min-width: #{ functions.screen(xxs) };
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 800;
+    margin: 0;
+}
+
+a:active,
+a:hover,
+a {
+    text-decoration: none;
+    color: functions.color("white");
+}
+
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+img {
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
