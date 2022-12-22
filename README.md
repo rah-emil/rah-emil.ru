@@ -1,2 +1,2 @@
-# rah-emil.ru
-Personal website
+# Personal website / Rah Emil
+init...
