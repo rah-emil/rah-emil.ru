@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "@iconify/vue": "^4.0.2",
+    "@rah-emil/vite-plugin-vue-type-imports": "^0.2.5",
     "@rushstack/eslint-patch": "^1.2.0",
     "@types/jsdom": "^20.0.1",
     "@types/node": "^18.11.12",
