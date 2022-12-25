@@ -1,14 +1,16 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-import WelcomeApp from './components/Welcome/WelcomeApp.vue';
+import SelectLang from './SelectLang.vue';
+import WelcomeScenes from './WelcomeScenes.vue';
 
 export default defineComponent({
   components: {
-    WelcomeApp,
+    SelectLang,
+    WelcomeScenes,
   },
 
   setup() {
-    const componentName = ref<string>('App.vue');
+    const componentName = ref<string>('WelcomeApp.vue');
 
     return {
       componentName,
@@ -19,7 +21,10 @@ export default defineComponent({
 
 <template>
   <div>
-    <WelcomeApp />
+    {{ componentName }}
+
+    <SelectLang />
+    <WelcomeScenes />
   </div>
 </template>
 
