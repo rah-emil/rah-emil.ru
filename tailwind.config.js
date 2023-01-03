@@ -1,7 +1,7 @@
 /* eslint-disable quote-props */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/*.{html,ts,js,vue,css}'],
+  content: ['./src/**/*.{html,ts,js,vue,css}'],
   theme: {
     fontFamily: {
       sans: ['Circie', 'sans-serif'],

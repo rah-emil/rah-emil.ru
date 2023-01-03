@@ -10,3 +10,8 @@ body {
 img {
   @apply w-full;
 }
+
+button,
+a {
+  @apply transition-all duration-150;
+}

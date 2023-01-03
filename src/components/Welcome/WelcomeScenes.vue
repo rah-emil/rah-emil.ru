@@ -1,12 +1,14 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { SUPPORT_LOCALES } from '@/i18n';
 
 export default defineComponent({
   components: {},
 
   setup() {
     const componentName = ref<string>('WelcomeScenes');
+    const languages = SUPPORT_LOCALES;
     const { t } = useI18n({
       locale: 'ru',
       messages: {
@@ -19,9 +21,16 @@ export default defineComponent({
       },
     });
 
+    function saveLocale(e: Event) {
+      const target = e.target as HTMLSelectElement;
+      localStorage.setItem('locale', target.value);
+    }
+
     return {
       componentName,
+      languages,
       t,
+      saveLocale,
     };
   },
 });
@@ -32,9 +41,13 @@ export default defineComponent({
     {{ componentName }}
 
     <label for="locale">locale</label>
-    <select v-model="$i18n.locale">
-      <option>ru</option>
-      <option>en</option>
+    <select v-model="$i18n.locale" @change="saveLocale">
+      <option
+        v-for="language in languages"
+        :key="language"
+      >
+        {{ language }}
+      </option>
     </select>
 
     <h2>{{ t('test') }}</h2>
