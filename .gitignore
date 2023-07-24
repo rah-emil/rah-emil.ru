@@ -1,0 +1,32 @@
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Dependencies
+node_modules
+
+# Packages
+/packages/*/dist
+/packages/*/build
+
+# editors
+.idea
+
+# OSX
+.DS_Store
+
+# environments
+.env
+.env.test
+.env.prod
+
+# logs
+*.log
+*.pid
+
+# SEO
+robots.txt
